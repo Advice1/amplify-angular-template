@@ -10,7 +10,8 @@ const schema = a.schema({
   Todo: a
     .model({
       content: a.string(),
-      Name:a.string()
+      Name:a.string(),
+      isDone: a.boolean()
     })
     .authorization((allow) => [allow.publicApiKey()])
   ,
@@ -20,6 +21,15 @@ const schema = a.schema({
       //isDone: a.boolean()
     })
     .authorization((allow) => [allow.publicApiKey()]),
+  // Add a new model below
+  SSP: a.model({
+    Title:a.string(),
+    Headings:a.string(),
+    content: a.string(),
+    Footer:a.string(),
+    //isDone: a.boolean()
+  })
+
 });
 
 export type Schema = ClientSchema<typeof schema>;

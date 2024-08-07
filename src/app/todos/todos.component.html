@@ -9,6 +9,13 @@
           {{todo.Name}}
         </li>
     </ul>
+  <ul>
+    <li
+      *ngFor="let todo of motus;">
+      {{ todo }}
+      {{todo.content}}
+    </li>
+  </ul>
     <div>
         🥳 App successfully hosted. Try creating a new todo.
         <br />

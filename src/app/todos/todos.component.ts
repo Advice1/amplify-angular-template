@@ -29,6 +29,7 @@ export class TodosComponent implements OnInit {
     } catch (error) {
       console.error('error fetching todos', error);
     }
+
   }
 
   createTodo() {
@@ -42,12 +43,11 @@ export class TodosComponent implements OnInit {
       this.listTodos();
 
 
-      client.models.Todo.create({
-        content: window.prompt('Todo content'),
-        Name:"Test",
-
-      });
-      this.listTodos();
+       client.models.Todo.create({
+         content: window.prompt('Todo content'),
+         Name:"Test",
+       });
+       this.listTodos();
     } catch (error) {
       console.error('error creating todos', error);
     }

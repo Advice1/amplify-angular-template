@@ -29,6 +29,7 @@ const schema = a.schema({
     Footer:a.string(),
     //isDone: a.boolean()
   })
+    .authorization((allow) => [allow.publicApiKey()]),
 
 });
 

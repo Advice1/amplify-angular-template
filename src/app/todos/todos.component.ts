@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { generateClient } from 'aws-amplify/data';
 import type { Schema } from '../../../amplify/data/resource';
+import {a} from "@aws-amplify/backend";
 
 const client = generateClient<Schema>();
 
@@ -33,8 +34,15 @@ export class TodosComponent implements OnInit {
 
   createTodo() {
     try {
+
+
+
+
+
       client.models.Todo.create({
         content: window.prompt('Todo content'),
+        Name:"Test",
+
       });
       this.listTodos();
     } catch (error) {

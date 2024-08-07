@@ -12,6 +12,13 @@ const schema = a.schema({
       content: a.string(),
       Name:a.string()
     })
+    .authorization((allow) => [allow.publicApiKey()])
+  ,
+  Motus: a.model({
+      Title:a.string(),
+      content: a.string(),
+      //isDone: a.boolean()
+    })
     .authorization((allow) => [allow.publicApiKey()]),
 });
 

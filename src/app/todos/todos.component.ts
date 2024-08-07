@@ -35,7 +35,11 @@ export class TodosComponent implements OnInit {
     try {
 
 
-
+     client.models.Motus.create({
+        Title: "window.prompt('Title')",
+        content: "window.prompt('Content')",
+      });
+      this.listTodos();
 
 
       client.models.Todo.create({
